@@ -57,7 +57,6 @@ class CeilometerStatistics(osnag.Resource):
                                     password    = self.openstack['password'],
                                     tenant_name = self.openstack['tenant_name'],
                                     auth_url    = self.openstack['auth_url'],
-                                    cacert      = self.openstack['cacert'],
                                     insecure    = self.openstack['insecure'])
         except Exception as e:
            self.exit_error('cannot get token ' + str(e))
@@ -66,7 +65,6 @@ class CeilometerStatistics(osnag.Resource):
         try:
            ceilometer = ceilclient.Client(endpoint = keystone.service_catalog.url_for(endpoint_type='public',service_type='metering'),
                                           token        = lambda: keystone.auth_token,
-                                          cacert       = self.openstack['cacert'],
                                           insecure     = self.openstack['insecure'])
         except Exception as e:
            self.exit_error('cannot start ceil ' + str(e))
