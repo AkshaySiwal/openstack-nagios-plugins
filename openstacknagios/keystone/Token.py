@@ -1,7 +1,3 @@
-#
-#    Copyright (C) 2014  Cirrax GmbH  http://www.cirrax.com
-#    Benedikt Trefzer <benedikt.trefzer@cirrax.com>
-#
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
