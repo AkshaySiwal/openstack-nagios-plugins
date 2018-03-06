@@ -39,7 +39,6 @@ class NeutronNetworkipavailabilities(osnag.Resource):
                                     password    = self.openstack['password'],
                                     tenant_name = self.openstack['tenant_name'],
                                     auth_url    = self.openstack['auth_url'],
-                                    cacert      = self.openstack['cacert'],
                                     insecure    = self.openstack['insecure'])
         except Exception as e:
             self.exit_error('cannot get token ' + str(e))
@@ -47,7 +46,6 @@ class NeutronNetworkipavailabilities(osnag.Resource):
         try:
             neutron = client.Client('2.0', endpoint_url = keystone.service_catalog.url_for(endpoint_type='public',service_type='network'),
                                           token        = keystone.auth_token, 
-                                          ca_cert      = self.openstack['cacert'],
                                           insecure     = self.openstack['insecure'])
         except Exception as e:
             self.exit_error('cannot load ' + str(e))
