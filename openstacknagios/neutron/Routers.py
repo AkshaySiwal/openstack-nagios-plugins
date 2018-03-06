@@ -46,7 +46,6 @@ class NeutronRouters(osnag.Resource):
                           password=self.openstack['password'],
                           tenant_name=self.openstack['tenant_name'],
                           auth_url=self.openstack['auth_url'],
-                          cacert=self.openstack['cacert'],
                           insecure=self.openstack['insecure'])
         except Exception as e:
             self.exit_error('cannot get token ' + str(e))
@@ -57,7 +56,6 @@ class NeutronRouters(osnag.Resource):
                                         endpoint_type='public',
                                         service_type='network'),
                                     token=k.auth_token, 
-                                    ca_cert=self.openstack['cacert'],
                                     insecure=self.openstack['insecure'])
         except Exception as e:
             self.exit_error('cannot load ' + str(e))
