@@ -42,7 +42,6 @@ class NovaImages(osnag.Resource):
                           self.openstack['password'], 
                           self.openstack['tenant_name'],
                           auth_url=self.openstack['auth_url'],
-                          cacert=self.openstack['cacert'],
                           insecure=self.openstack['insecure'])
             nova.images.list()
         except Exception as e:
